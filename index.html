@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gala Teatral | Hotel Xperia</title>
+    <!--metadatos importantes-->
+    <meta name="description"
+        content="Únete a la Gran Gala Teatral en el Hotel Xperia. Una noche de elegancia, drama y pasión con Free Marcano como tu anfitrión. Solicita tu invitación aquí.">
+    <meta name="author" content="Free Marcano">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tudominio.com/">
+    <meta property="og:title" content="Gala Teatral | Hotel Xperia">
+    <meta property="og:description"
+        content="Únete a la Gran Gala Teatral en el Hotel Xperia. Una noche de elegancia, drama y pasión con Free Marcano como tu anfitrión.">
+    <meta property="og:image" content="https://www.tudominio.com/imagenLink.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.tudominio.com/">
+    <meta name="twitter:title" content="Gala Teatral | Hotel Xperia">
+    <meta name="twitter:description"
+        content="Únete a la Gran Gala Teatral en el Hotel Xperia. Una noche de elegancia, drama y pasión con Free Marcano como tu anfitrión.">
+    <meta name="twitter:image" content="https://www.tudominio.com/imagenLink.png">
+    <!-- Google Fonts elegantes -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== RESET Y ESTILOS GLOBALES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0e6d2;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        /* ===== BOTONES ===== */
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #c9a87c 0%, #b08a5c 100%);
+            color: #0a0a0a;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(201, 168, 124, 0.3);
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(201, 168, 124, 0.5);
+            background: linear-gradient(135deg, #d4b08c 0%, #c09a6a 100%);
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20b859;
+            transform: scale(1.05);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1503095396549-807759245b35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1.2s;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            animation: fadeInUp 1.2s;
+        }
+
+        .hero-content .btn {
+            animation: fadeIn 2s;
+        }
+
+        /* ===== ANIMACIONES ===== */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== TÍTULOS DE SECCIÓN ===== */
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            color: #d4af37;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #d4af37;
+            margin: 15px auto 0;
+        }
+
+        /* ===== TARJETAS DE INFORMACIÓN ===== */
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            border-color: #d4af37;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        /* ===== FORMULARIO ===== */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(20, 20, 20, 0.9);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid #d4af37;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #444;
+            border-radius: 50px;
+            font-size: 1rem;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #d4af37;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group input::placeholder {
+            color: #aaa;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .whatsapp-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* ===== TICKET VISIBLE ===== */
+        .ticket-visual {
+            max-width: 600px;
+            margin: 40px auto 0;
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            padding: 30px;
+            background: #1a1a1a;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            background-image: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 30%);
+        }
+
+        .ticket-visual h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+
+        .ticket-visual p {
+            font-size: 1.2rem;
+            margin: 5px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .ticket-visual .nombre-invitado {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px dashed #d4af37;
+            padding-bottom: 10px;
+        }
+
+        .ticket-visual .cedula-invitado {
+            font-size: 1.3rem;
+            color: #d4af37;
+        }
+
+        /* Nuevo estilo para el código aleatorio */
+        .ticket-visual .codigo-invitado {
+            font-size: 1.3rem;
+            margin: 10px 0;
+            color: #d4af37;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .ticket-visual .footer-ticket {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 1rem;
+            color: #aaa;
+        }
+
+        .btn-descarga {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* ===== TOAST NOTIFICACIÓN ===== */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(26, 26, 26, 0.95);
+            border: 1px solid #d4af37;
+            border-radius: 50px;
+            padding: 15px 25px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #d4af37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0a0a;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .toast-message {
+            font-weight: 500;
+        }
+
+        .toast-close {
+            margin-left: 10px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            font-size: 1.2rem;
+        }
+
+        .toast-close:hover {
+            opacity: 1;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #000;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #d4af37;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 30px 0;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .toast-notification {
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                width: auto;
+                border-radius: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Noche de Gala<br>El Arte en Escena</h1>
+            <p>Hotel Xperia · 15 de Mayo 2026 · 20:00 hrs</p>
+            <h2>Free Marcano <br> Actor y tu Anfitrión</h2>
+            <br>
+            <a href="#formulario" class="btn">Solicitar Invitación</a>
+        </div>
+    </section>
+
+    <!-- SOBRE EL EVENTO -->
+    <section class="container">
+        <h2 class="section-title">El Evento</h2>
+        <div class="info-card">
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Sumérgete en una experiencia teatral única con la obra
+                <strong>"El Último Telón"</strong>, protagonizada por la reconocida compañía <strong>Teatro del
+                    Alma</strong>. Una noche donde la pasión, el drama y la elegancia se fusionan en el majestuoso salón
+                principal del Hotel Xperia.
+            </p>
+            <p><strong>Duración:</strong> 90 minutos (con intermedio) · <strong>Código de vestimenta:</strong> Gala /
+                Etiqueta</p>
+        </div>
+    </section>
+
+    <!-- EL LUGAR -->
+    <section class="container">
+        <h2 class="section-title">El Hotel Xperia</h2>
+        <div class="info-card" style="display: flex; flex-wrap: wrap; gap: 30px;">
+            <div style="flex: 1; min-width: 250px;">
+                <p>Ubicado en el corazón de la ciudad, el Hotel Xperia es sinónimo de lujo y sofisticación. Su salón de
+                    eventos, con capacidad para más de 1500 personas, ofrece una acústica perfecta y una decoración que
+                    evoca los grandes teatros europeos.</p>
+                <p><strong>Dirección:</strong> Av. Principal 123, Ciudad</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-73.9851156845842!3d40.74881797932892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1ses!2ses!4v1650000000000!5m2!1ses!2ses"
+                    width="100%" height="200" style="border:0; border-radius: 15px; margin-top: 20px;"
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Hotel Xperia interior"
+                    style="width:100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE INVITACIÓN -->
+    <section id="formulario" class="container">
+        <h2 class="section-title">Solicita tu Invitación</h2>
+        <div class="form-container">
+            <form id="invitacionForm">
+                <div class="form-group">
+                    <input type="text" id="nombres" placeholder="Nombres" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="apellidos" placeholder="Apellidos" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="cedula" placeholder="Cédula / DNI" required>
+                </div>
+                <button type="button" id="btnPrevisualizar" class="btn btn-submit">Previsualizar Invitación</button>
+            </form>
+
+            <div class="whatsapp-container">
+                <a href="https://wa.link/yng6jg" target="_blank" class="btn-whatsapp">
+                    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+                        style="width: 24px; height: 24px;" alt="WhatsApp">
+                    Contáctanos por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Ticket visible (se muestra después de la previsualización) -->
+        <div id="ticketContainer" style="display: none;">
+            <div id="ticketVisible" class="ticket-visual">
+                <h3>GRAN GALA TEATRAL</h3>
+                <p>Hotel Xperia · 15 de Mayo 2026 · 20:00 hrs</p>
+                <div class="nombre-invitado" id="ticketNombreVisible">Nombre Apellido</div>
+                <div class="cedula-invitado" id="ticketCedulaVisible">Cédula: 12345678</div>
+                <!-- Nuevo código aleatorio -->
+                <div class="codigo-invitado">Código: <span id="ticketCodigo">A1B2C3</span></div>
+                <h2>Free Marcano: <br>Actor & Anfitrión</h2>
+                <div class="footer-ticket">
+                    <p>Válido para una persona</p>
+                    <p>Presentar en acceso</p>
+                </div>
+            </div>
+            <div class="btn-descarga">
+                <button id="btnDescargar" class="btn">Descargar Invitación</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="container" style="padding: 20px 0;">
+            <p>© 2026 Gala Teatral Hotel Xperia. Todos los derechos reservados.</p>
+            <p>Email: eventos@hotelxperia.com | Tel: +123 456 7890</p>
+            <p>Los datos proporcionados serán usados solo para la generación de su invitación.</p>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICACIÓN -->
+    <div id="toast" class="toast-notification">
+        <div class="toast-icon">✓</div>
+        <div class="toast-message">¡Ticket descargado! Está en tu galería.</div>
+        <span class="toast-close" onclick="ocultarToast()">×</span>
+    </div>
+
+    <!-- Scripts: html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        (function () {
+            const btnPrevisualizar = document.getElementById('btnPrevisualizar');
+            const btnDescargar = document.getElementById('btnDescargar');
+            const ticketContainer = document.getElementById('ticketContainer');
+            const ticketVisible = document.getElementById('ticketVisible');
+            const nombreSpan = document.getElementById('ticketNombreVisible');
+            const cedulaSpan = document.getElementById('ticketCedulaVisible');
+            const codigoSpan = document.getElementById('ticketCodigo');
+
+            // Función para generar código aleatorio de 6 caracteres (letras y números)
+            function generarCodigo() {
+                return Math.random().toString(36).substring(2, 8).toUpperCase();
+            }
+
+            // Función para mostrar el toast
+            window.mostrarToast = function () {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                // Ocultar automáticamente después de 3 segundos
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            };
+
+            // Función para ocultar el toast manualmente (por el botón de cierre)
+            window.ocultarToast = function () {
+                document.getElementById('toast').classList.remove('show');
+            };
+
+            btnPrevisualizar.addEventListener('click', function () {
+                const nombres = document.getElementById('nombres').value.trim();
+                const apellidos = document.getElementById('apellidos').value.trim();
+                const cedula = document.getElementById('cedula').value.trim();
+
+                if (!nombres || !apellidos || !cedula) {
+                    alert('Por favor completa todos los campos.');
+                    return;
+                }
+
+                const nombreCompleto = `${nombres} ${apellidos}`;
+
+                nombreSpan.textContent = nombreCompleto;
+                cedulaSpan.textContent = `Cédula: ${cedula}`;
+
+                ticketContainer.style.display = 'block';
+                ticketContainer.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            btnDescargar.addEventListener('click', async function () {
+                if (ticketContainer.style.display === 'none') {
+                    alert('Primero previsualiza tu invitación.');
+                    return;
+                }
+
+                // Generar nuevo código aleatorio
+                codigoSpan.textContent = generarCodigo();
+
+                // Pequeña pausa para actualizar el DOM
+                await new Promise(resolve => setTimeout(resolve, 50));
+                await document.fonts.ready;
+
+                try {
+                    const canvas = await html2canvas(ticketVisible, {
+                        scale: 2,
+                        backgroundColor: '#1a1a1a',
+                        allowTaint: false,
+                        useCORS: true,
+                        logging: false
+                    });
+
+                    const dataUrl = canvas.toDataURL('image/png');
+                    const link = document.createElement('a');
+                    link.download = `invitacion-${nombreSpan.textContent.replace(/\s+/g, '_')}.png`;
+                    link.href = dataUrl;
+                    link.click();
+
+                    // Mostrar notificación de éxito
+                    mostrarToast();
+                } catch (error) {
+                    console.error('Error al generar la imagen:', error);
+                    alert('Hubo un error al generar la invitación. Intenta de nuevo.');
+                }
+            });
+        })();
+    </script>
+
+    <!-- Scroll suave para el botón del hero -->
+    <script>
+        document.querySelector('.hero .btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('#formulario').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>
